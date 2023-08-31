@@ -10,10 +10,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
     <!-- Comments -->
     {#  jinja comments #}
-    <div class="container">
+   <div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'first_app:home' %}">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teacher
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'first_app:teacher_list' %}">Õpetajate nimekiri</a></li>
+            <li><a class="dropdown-item" href="{% url 'first_app:teacher_create' %}">Lisa uus õpetaja</a></li>
+
+            <li><hr class="dropdown-divider"></li>
+
+          </ul>
+        </li>
+
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'first_app:student_list' %}">Õpilaste list</a></li>
+            <li><a class="dropdown-item" href="{% url 'first_app:student_create' %}">Lisa õpilane</a></li>
+
+            <li><hr class="dropdown-divider"></li>
+
+          </ul>
+        </li>
+    </div>
+  </div>
+</nav>
+
         {% block content %}
 
         {% endblock %}

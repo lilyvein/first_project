@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1>Teacher list</h1>
+    <a href="{% url 'first_app:home' %}">Home page</a>
+
+    <p></p>
+
+    <ul>
+        {% for teacher in object_list %}
+            <li>
+                {{ teacher }}
+
+            </li>
+        {% endfor %}
+    </ul>
+    <p>There are {{ object_list|length }} teachers in total</p>
+
+    <p></p>
+
+
+
+ <a href="{% url 'first_app:teacher_create' %}">Lisa uus õpetaja</a>
+{% endblock %}
