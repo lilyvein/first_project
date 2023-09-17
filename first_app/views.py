@@ -12,15 +12,17 @@ class MyHomeView(TemplateView):
 
 class StudentListView(ListView):
     # model_list.html -> student_ist.html
-    model = Student # Connected to Models Student
-    queryset = Student.objects.order_by('name') # Result ordered by name
-    context_object_name = 'students' # default object_list now students
+    model = Student  # Connected to Models Student
+    queryset = Student.objects.order_by('name')  # Result ordered by name
+    context_object_name = 'students'  # default object_list now students
     paginate_by = 10  # 10 per page in ListView
+
 
 class StudentDetailView(DetailView):
     # Return only one model entry
     # default template model_detail.html => student_detail.html
     model = Student
+
 
 class StudentCreateView(CreateView):
     template_name = 'first_app/student_form_create.html'
@@ -28,11 +30,13 @@ class StudentCreateView(CreateView):
     fields = '__all__'  # All fields into form
     success_url = reverse_lazy('first_app:student_list')
 
+
 class StudentUpdateView(UpdateView):
     # model_form.html => student_form.html
     model = Student
-    fields = ['name', 'weight'] # update only this fields
-    success_url = reverse_lazy ('first_app:student_list')
+    fields = ['name', 'weight']  # update only this fields
+    success_url = reverse_lazy('first_app:student_list')
+
 
 class StudentDeleteView(DeleteView):
     # Form -> Confirm Delete Button
@@ -42,6 +46,7 @@ class StudentDeleteView(DeleteView):
     # redirect after successful delete
     success_url = reverse_lazy('first_app:student_list')
 
+
 class TeacherListView(ListView):
 
     model = Teacher  # Connected to Models Teacher
@@ -49,39 +54,37 @@ class TeacherListView(ListView):
     context_object_name = 'teacher'  # default object_list now teacher
     # paginate_by = 10  # 10 per page in ListView
 
+
 class TeacherCreateView(CreateView):
     template_name = 'first_app/teacher_form_create.html'
     model = Teacher
     fields = '__all__'  # All fields into form
     success_url = reverse_lazy('first_app:teacher_list')
 
+
 class SubjectListView(ListView):
     model = Subject
     queryset = Subject.objects.order_by('subject')  # Result ordered by name
     context_object_name = 'subject'  # default object_list now teacher
 
+
 class SubjectCreateView(CreateView):
-    template_name = 'first_app/subject_form.html'
+    template_name = 'first_app/subject_form_create.html'
     model = Subject
     fields = '__all__'  # All fields into form
-    success_url = reverse_lazy('first_app:subject_list.html')
+    success_url = reverse_lazy('first_app:subject_list')
+
+
+class SubjectDetailView(DetailView):
+    model = Subject
+
 
 class SubjectUpdateView(UpdateView):
-    # model_form.html => student_form.html
-    model = Student
-    fields = ['name', 'weight'] # update only this fields
-    success_url = reverse_lazy ('first_app:student_list')
+    model = Subject
+    fields = ['subject']  # update only this fields
+    success_url = reverse_lazy('first_app:subject_list')
+
 
 class SubjectDeleteView(DeleteView):
-    # Form -> Confirm Delete Button
-    # default template name => model_confirm_delete.html ->
-    # -> student_confirm_delete.html
-    model = Student
-    # redirect after successful delete
-    success_url = reverse_lazy('first_app:student_list')
-
-
-
-
-
-
+    model = Subject
+    success_url = reverse_lazy('first_app:subject_list')

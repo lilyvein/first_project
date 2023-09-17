@@ -12,7 +12,8 @@ def populate(n=9):
     # print(n)
     for entry in range(n):
 
-        subject_list = ['Ajalugu', 'Eesti keel', 'Keemia', 'Kirjandus', 'Klassitund', 'Muusika', 'Geograafia', 'Füüsika', 'Bioloogia',]
+        subject_list = ['Ajalugu', 'Eesti keel', 'Keemia', 'Kirjandus',
+                        'Klassitund', 'Muusika', 'Geograafia', 'Füüsika', 'Bioloogia']
 
         # print(f'{subject_list}')
         # New Entry to Subjects table
@@ -20,4 +21,4 @@ def populate(n=9):
 
 
 populate(9)  # teeb 5 inimest
-# populate(20) # teeb 20
+#  populate(20) # teeb 20

@@ -2,10 +2,17 @@
 {% block content %}
     <h1>Homepage</h1>
 
+    <h6>Student</h6>
     <p><a href="{% url 'first_app:student_list' %}">List All Students</a></p>
     <p><a href="{% url 'first_app:student_create' %}">Add a new Student</a></p>
+
+    <h6>Teacher</h6>
     <p><a href="{% url 'first_app:teacher_list' %}">List All Teachers</a></p>
     <p><a href="{% url 'first_app:teacher_create' %}">Create New Teachers</a></p>
+
+   <h6>Subject</h6>
+    <p><a href="{% url 'first_app:subject_list' %}">List All Subjects</a></p>
+    <p><a href="{% url 'first_app:subject_create' %}">Add a new Subjects</a></p>
 
 
 

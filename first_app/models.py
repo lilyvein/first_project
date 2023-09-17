@@ -31,12 +31,14 @@ class Teacher(models.Model):
 
 
 class TeacherAdmin(admin.ModelAdmin):
+
     list_display = ['name', 'subject']
     list_per_page = 10
 
 
 class Subject(models.Model):
     subject = models.CharField(max_length=50)
+
     def __str__(self):
         return f'{self.subject}'
 

@@ -22,4 +22,4 @@ def populate(n=10):
 
 
 populate()  # teeb 5 inimest
-# populate(20) # teeb 20
+#  populate(20) # teeb 20
